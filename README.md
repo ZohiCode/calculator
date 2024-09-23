@@ -18,4 +18,4 @@ Bu proje, temel matematiksel işlemleri gerçekleştiren basit bir hesap makines
 
 Proje sayfalarını [GitHub Pages](https://ZohiCode.github.io/) ile yayımladım. Aşağıdaki bağlantılardan projelere erişebilirsiniz:
 
-- [To-Do List Projesi](https://ZohiCode.github.io/calculator/)
+- [Hesap Makinesi Projesi](https://ZohiCode.github.io/calculator/)
