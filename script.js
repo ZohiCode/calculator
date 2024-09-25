@@ -6,20 +6,18 @@ let operator = '';
 let previousInput = '';
 let history = '';
 
-// Sayı ekle
 function appendNumber(number) {
-  currentInput += number.toString(); // Sayıyı dizeye dönüştür
+  currentInput += number.toString(); 
   updateDisplay();
 }
 
-// Operatör ekle
 function appendOperator(op) {
-  if (currentInput === '') return; // Boş girdi kontrolü
-  currentInput += op; // Operatörü ekle
+  if (currentInput === '') return; 
+  currentInput += op; 
   updateDisplay();
 }
 
-// Nokta ekle
+
 function appendDot() {
   if (!currentInput.includes('.')) {
     currentInput += '.';
@@ -36,43 +34,38 @@ function clearDisplay() {
   updateHistory('');
 }
 
-// Son girdiyi sil
+
 function deleteLast() {
   currentInput = currentInput.slice(0, -1);
   updateDisplay();
 }
 
-// Parantez ekle
 function appendParenthesis(paren) {
   currentInput += paren;
   updateDisplay();
 }
 
-// Sonucu hesapla
+
 function calculateResult() {
   try {
-    // JavaScript işlem önceliği için uygun bir formatta değerlendir
     const sanitizedInput = currentInput
       .replace(/×/g, '*')
       .replace(/÷/g, '/');
 
-    // Hesaplama işlemi
     const result = eval(sanitizedInput);
-    currentInput = result.toString(); // Sonucu dizeye dönüştür
+    currentInput = result.toString(); 
     updateDisplay();
-    updateHistory(currentInput); // Geçmişi güncelle
+    updateHistory(currentInput); 
   } catch (error) {
-    display.value = "Error"; // Hata durumunda mesaj göster
+    display.value = "Error"; 
     currentInput = '';
   }
 }
 
-// Ekranı güncelle
 function updateDisplay() {
   display.value = currentInput;
 }
 
-// Geçmişi güncelle
 function updateHistory(value) {
   operationHistory.innerText = value;
 }
